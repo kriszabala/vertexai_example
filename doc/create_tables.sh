@@ -22,7 +22,7 @@ BQ_SOURCE_TABLE=creditcards
 ML_TABLE=creditcards_ml
 DST_TABLE=$BQ_DATASET_NAME.$BQ_SOURCE_TABLE
 BUCKET="gs://$PROJECT/data/credit_cards*"
-REGION=europe-west4
+REGION=us-central1
 ENDPOINT="$REGION-aiplatform.googleapis.com"
 
 #Extract & Load

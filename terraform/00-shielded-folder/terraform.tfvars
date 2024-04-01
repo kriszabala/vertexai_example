@@ -19,7 +19,7 @@ folder_config = {
 
 kms_keys = {
   compute = {
-    locations = ["europe-west4"]
+    locations = ["us-central1"]
   },
   
 }

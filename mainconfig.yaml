@@ -1,6 +1,6 @@
 creditcards:
     project: 'mlops-helloworld'
-    region: 'europe-west4' 
+    region: 'us-central1' 
     docker_repo: 'us-central1-docker.pkg.dev/mlops-helloworld/docker-repo'
     service_account: 'mlops-sa-mlops@mlops-helloworld.iam.gserviceaccount.com'
     vertex_dataset_name: 'creditcards'

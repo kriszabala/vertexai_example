@@ -101,7 +101,7 @@ substitutions:
   _PIPELINES_STORE: gs://mlops-helloworld-dev/creditcards/compiled_pipelines/
   _MODEL_DISPLAY_NAME: creditcards-kfp
   _NETWORK: https://www.googleapis.com/compute/v1/projects/mlops-helloworld/regions/us-central1/subnetworks/subnet-us-central1
-  _DATAFLOW_NETWORK: regions/europe-west4/subnetworks/subnet-europe-west4
+  _DATAFLOW_NETWORK: regions/us-central1/subnetworks/subnet-us-central1
   _SERVICE_ACCOUNT: mlops-sa-mlops@mlops-helloworld.iam.gserviceaccount.com
   _WORKDIR: vertexai_example
 options:

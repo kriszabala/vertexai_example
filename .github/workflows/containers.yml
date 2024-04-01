@@ -30,7 +30,7 @@ env:
   PROJECT_ID: mlops-helloworld
   # SA used to authenticate in GCP through Workload Identity Federation 
   SERVICE_ACCOUNT: mlops-sa-github@mlops-helloworld.iam.gserviceaccount.com
-  REGION: europe-west4
+  REGION: us-central1
   DOCKER_REPO: us-central1-docker.pkg.dev/mlops-helloworld/docker-repo
   WORKLOAD_ID_PROVIDER: projects/899116504370/locations/global/workloadIdentityPools/gh-pool/providers/gh-provider
   CLOUDBUILD_LOGS: gs://mlops-helloworld_cloudbuild/logs
