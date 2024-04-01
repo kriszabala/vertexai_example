@@ -91,7 +91,7 @@ variable "project_config" {
 variable "region" {
   description = "Region used for regional resources."
   type        = string
-  default     = "europe-west4"
+  default     = "us-central1"
 }
 
 variable "sa_mlops_name" {

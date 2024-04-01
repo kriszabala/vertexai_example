@@ -173,7 +173,7 @@ locals {
     pipeline_params = "{\"bq_table\": \"${module.mlops.github.PROJECT_ID}.${var.dataset_name}.creditcards_ml\"}"
   })
 
-  model_deployment = templatefile("${path.module}/../../build/model-deployment.yaml.TEMPLATE", {
+  model_deployment = templatefile("${path.module}/../../build/model-deployment-tfx.yaml.TEMPLATE", {
     project_id    = module.mlops.github.PROJECT_ID,
     region        = var.region,
     github_org    = try(var.github.organization, null),

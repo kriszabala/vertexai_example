@@ -49,4 +49,5 @@ module "mlops" {
   labels                  = local.labels
   notebooks               = var.notebooks
   service_encryption_keys = var.service_encryption_keys
+  region                  = var.region
 }
