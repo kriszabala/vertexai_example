@@ -55,15 +55,16 @@ def train(
     )
 
     optimizer = keras.optimizers.Adam(learning_rate=hyperparams["learning_rate"])
-    loss = keras.losses.BinaryCrossentropy(from_logits=True)
+    loss = 'mean_absolute_error'
     #loss = f1_weighted_loss
     
     acc_name = f'accuracy_{run}' if run else 'accuracy'
     auc_name = f'auc_{run}' if run else 'auc'
-    metrics = [keras.metrics.BinaryAccuracy(name=acc_name), keras.metrics.AUC(curve='PR', name=auc_name)]
-    if run:
+    #metrics = [keras.metrics.BinaryAccuracy(name=acc_name), keras.metrics.AUC(curve='PR', name=auc_name)]
+    metrics = [keras.metrics.MeanAbsoluteError()]
+    #if run:
         # we need one just called "accuracy" as well, to have one metric to optimize across runs for HP tuning
-        metrics.append(keras.metrics.BinaryAccuracy(name='accuracy'))
+    #    metrics.append(keras.metrics.BinaryAccuracy(name='accuracy'))
    
 
     early_stopping = tf.keras.callbacks.EarlyStopping(

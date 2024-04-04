@@ -27,9 +27,9 @@ MODEL_REGISTRY_URI = os.getenv(
     os.path.join(GCS_LOCATION, "model_registry"),
 )
 
-VERTEX_DATASET_NAME = os.getenv("VERTEX_DATASET_NAME", "creditcards")
+VERTEX_DATASET_NAME = os.getenv("VERTEX_DATASET_NAME", "events")
 MODEL_DISPLAY_NAME = os.getenv(
-    "MODEL_DISPLAY_NAME", f"{VERTEX_DATASET_NAME}-classifier"
+    "MODEL_DISPLAY_NAME", f"{VERTEX_DATASET_NAME}-regression"
 )
 PIPELINE_NAME = os.getenv("PIPELINE_NAME", f"{MODEL_DISPLAY_NAME}-train-pipeline")
 

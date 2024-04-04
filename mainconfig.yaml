@@ -1,9 +1,9 @@
-creditcards:
+site1:
     project: 'mlops-helloworld'
     region: 'us-central1' 
     docker_repo: 'us-central1-docker.pkg.dev/mlops-helloworld/docker-repo'
     service_account: 'mlops-sa-mlops@mlops-helloworld.iam.gserviceaccount.com'
-    vertex_dataset_name: 'creditcards'
+    vertex_dataset_name: 'events'
     raw_schema_dir: 'src/raw_schema'
     bucket: 'mlops-helloworld-dev'
     limit: 5000
@@ -12,14 +12,14 @@ creditcards:
     artifactregistry_region: 'us-central1'
     python_pkg_repo: 'pyrepo'
     bq:
-       dataset: 'creditcards'
+       dataset: 'site1'
        location: 'us-central1'
-       source_table: 'creditcards'
-       ml_table: 'creditcards_ml'
+       source_table: 'events'
+       ml_table: 'events_ml'
     dataflow:
         subnet: 'https://www.googleapis.com/compute/v1/projects/mlops-helloworld/regions/us-central1/subnetworks/subnet-us-central1'
         service_account: 'mlops-sa-mlops@mlops-helloworld.iam.gserviceaccount.com'
-    featurestore_id: 'creditcards'
+    featurestore_id: 'events'
     git:
         repo_url: "git@github.com:kriszabala/vertexai_example"
         branch: "dev"     

@@ -201,7 +201,7 @@ def create_pipeline(
             tfma.ModelSpec(
                 signature_name="serving_tf_example",
                 label_key=features.TARGET_FEATURE_NAME,
-                prediction_key="probabilities",
+                #prediction_key="probabilities",
             )
         ],
         slicing_specs=[
@@ -210,21 +210,13 @@ def create_pipeline(
         metrics_specs=[
             tfma.MetricsSpec(
                 metrics=[
-                    tfma.MetricConfig(class_name="ExampleCount"),
-                    tfma.MetricConfig(
-                        class_name="BinaryAccuracy",
-                        threshold=tfma.MetricThreshold(
-                            value_threshold=tfma.GenericValueThreshold(
-                                lower_bound={"value": float(config.ACCURACY_THRESHOLD)}
-                            ),
-                            # Change threshold will be ignored if there is no
-                            # baseline model resolved from MLMD (first run).
-                            change_threshold=tfma.GenericChangeThreshold(
-                                direction=tfma.MetricDirection.HIGHER_IS_BETTER,
-                                absolute={"value": -1e-10},
-                            ),
-                        ),
-                    ),
+                    tfma.MetricConfig(class_name='ExampleCount',
+                                  threshold=tfma.MetricThreshold(
+                                      value_threshold=tfma.GenericValueThreshold(
+                                      lower_bound={"value": 1}
+                                      )
+                                  )),
+                    tfma.MetricConfig(class_name='MeanSquaredError'),
                 ]
             )
         ],

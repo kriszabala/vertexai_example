@@ -24,12 +24,12 @@ def get_source_query(bq_dataset_name, bq_table_name, ml_use, limit=None):
     
     if not ml_use:
         query += f"""
-    EXCEPT (Time, ML_use, Class)
+    EXCEPT (ML_use, actual_duration_until_arrived_seconds, actual_duration_until_pickup_type_waiting_seconds, actual_duration_until_waiting_seconds)
     FROM {bq_dataset_name}.{bq_table_name} 
     """
     else:
         query += f"""
-    EXCEPT (Time, ML_use)
+    EXCEPT (ML_use, actual_duration_until_pickup_type_waiting_seconds, actual_duration_until_waiting_seconds)
     FROM {bq_dataset_name}.{bq_table_name} 
     WHERE ML_use = '{ml_use}'
     """

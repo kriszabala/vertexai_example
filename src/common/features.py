@@ -14,7 +14,7 @@
 """Model features metadata utils."""
 
 
-TARGET_FEATURE_NAME = "Class"
+TARGET_FEATURE_NAME = "actual_duration_until_arrived_seconds"
 TARGET_LABELS = ["legit", "fraudulent"]
 
 

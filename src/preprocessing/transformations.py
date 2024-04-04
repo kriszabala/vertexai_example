@@ -17,14 +17,5 @@ import tensorflow_transform as tft
 
 
 def preprocessing_fn(inputs):
-    output_dict = {
-        'Amount': tft.scale_to_z_score(inputs['Amount']),
-        'Class': inputs['Class']
-    }
-    
-    # Let's normalize all the columns that start with V
-    for col in inputs.keys():
-        if col.startswith("V"):
-            output_dict[col] = tft.scale_to_z_score(inputs[col])
-
-    return output_dict
+    # preprocessing goes here
+    return inputs

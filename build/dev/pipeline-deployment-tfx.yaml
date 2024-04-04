@@ -134,21 +134,21 @@ substitutions:
   _CICD_IMAGE_URI: 'us-central1-docker.pkg.dev/mlops-helloworld/docker-repo/cicd-tfx:latest'
   _DATAFLOW_IMAGE_URI: 'us-central1-docker.pkg.dev/mlops-helloworld/docker-repo/dataflow:latest'
   _TFX_IMAGE_URI: 'us-central1-docker.pkg.dev/mlops-helloworld/docker-repo/vertex:latest'
-  _GCS_LOCATION: 'gs://mlops-helloworld-dev/creditcards/'
-  _TEST_GCS_LOCATION: 'gs://mlops-helloworld-dev/creditcards/e2e_tests'
+  _GCS_LOCATION: 'gs://mlops-helloworld-dev/eta/'
+  _TEST_GCS_LOCATION: 'gs://mlops-helloworld-dev/eta/e2e_tests'
   _BQ_LOCATION: us-central1
-  _BQ_DATASET_NAME: creditcards
-  _ML_TABLE: creditcards_ml
-  _VERTEX_DATASET_NAME: creditcards
-  _MODEL_DISPLAY_NAME: creditcards-classifier-v02
+  _BQ_DATASET_NAME: site1
+  _ML_TABLE: events_ml
+  _VERTEX_DATASET_NAME: events
+  _MODEL_DISPLAY_NAME: site1-eta-v01
   _CI_TRAIN_LIMIT: '1000'
   _CI_TEST_LIMIT: '100'
   _CI_UPLOAD_MODEL: '0'
   _CI_ACCURACY_THRESHOLD: '-0.1'
   _BEAM_RUNNER: DataflowRunner
   _TRAINING_RUNNER: vertex
-  _PIPELINE_NAME: creditcards-classifier-v02-train-pipeline
-  _PIPELINES_STORE: gs://mlops-helloworld-dev/creditcards/compiled_pipelines/
+  _PIPELINE_NAME: eta-v01-train-pipeline
+  _PIPELINES_STORE: gs://mlops-helloworld-dev/eta/compiled_pipelines/
   _SUBNETWORK: https://www.googleapis.com/compute/v1/projects/mlops-helloworld/regions/us-central1/subnetworks/subnet-us-central1
   _SERVICE_ACCOUNT: mlops-sa-mlops@mlops-helloworld.iam.gserviceaccount.com
   _WORKDIR: vertexai_example
