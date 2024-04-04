@@ -1,5 +1,18 @@
 feature {
-  name: "V1"
+  name: "order_id"
+  type: INT
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "actual_duration_until_arrived_seconds"
   type: FLOAT
   presence {
     min_fraction: 1.0
@@ -12,7 +25,20 @@ feature {
   }
 }
 feature {
-  name: "V2"
+  name: "pickup_type"
+  type: INT
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "eta_seconds"
   type: FLOAT
   presence {
     min_fraction: 1.0
@@ -25,7 +51,7 @@ feature {
   }
 }
 feature {
-  name: "V3"
+  name: "accuracy"
   type: FLOAT
   presence {
     min_fraction: 1.0
@@ -38,7 +64,7 @@ feature {
   }
 }
 feature {
-  name: "V4"
+  name: "speed"
   type: FLOAT
   presence {
     min_fraction: 1.0
@@ -51,7 +77,7 @@ feature {
   }
 }
 feature {
-  name: "V5"
+  name: "dx"
   type: FLOAT
   presence {
     min_fraction: 1.0
@@ -64,7 +90,7 @@ feature {
   }
 }
 feature {
-  name: "V6"
+  name: "dy"
   type: FLOAT
   presence {
     min_fraction: 1.0
@@ -77,7 +103,7 @@ feature {
   }
 }
 feature {
-  name: "V7"
+  name: "dist_to_site"
   type: FLOAT
   presence {
     min_fraction: 1.0
@@ -90,7 +116,22 @@ feature {
   }
 }
 feature {
-  name: "V8"
+  name: "is_cached"
+  type: INT
+  bool_domain {
+  }
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "last_eta_seconds"
   type: FLOAT
   presence {
     min_fraction: 1.0
@@ -103,7 +144,7 @@ feature {
   }
 }
 feature {
-  name: "V9"
+  name: "seconds_since_last_eta"
   type: FLOAT
   presence {
     min_fraction: 1.0
@@ -116,7 +157,7 @@ feature {
   }
 }
 feature {
-  name: "V10"
+  name: "last_dx"
   type: FLOAT
   presence {
     min_fraction: 1.0
@@ -129,7 +170,7 @@ feature {
   }
 }
 feature {
-  name: "V11"
+  name: "last_dy"
   type: FLOAT
   presence {
     min_fraction: 1.0
@@ -142,7 +183,7 @@ feature {
   }
 }
 feature {
-  name: "V12"
+  name: "heading_x"
   type: FLOAT
   presence {
     min_fraction: 1.0
@@ -155,7 +196,7 @@ feature {
   }
 }
 feature {
-  name: "V13"
+  name: "heading_y"
   type: FLOAT
   presence {
     min_fraction: 1.0
@@ -168,8 +209,8 @@ feature {
   }
 }
 feature {
-  name: "V14"
-  type: FLOAT
+  name: "heading"
+  type: INT
   presence {
     min_fraction: 1.0
     min_count: 1
@@ -181,8 +222,8 @@ feature {
   }
 }
 feature {
-  name: "V15"
-  type: FLOAT
+  name: "month_of_year"
+  type: INT
   presence {
     min_fraction: 1.0
     min_count: 1
@@ -194,8 +235,8 @@ feature {
   }
 }
 feature {
-  name: "V16"
-  type: FLOAT
+  name: "day_of_month"
+  type: INT
   presence {
     min_fraction: 1.0
     min_count: 1
@@ -207,8 +248,8 @@ feature {
   }
 }
 feature {
-  name: "V17"
-  type: FLOAT
+  name: "day_of_year"
+  type: INT
   presence {
     min_fraction: 1.0
     min_count: 1
@@ -220,8 +261,8 @@ feature {
   }
 }
 feature {
-  name: "V18"
-  type: FLOAT
+  name: "day_of_week"
+  type: INT
   presence {
     min_fraction: 1.0
     min_count: 1
@@ -233,8 +274,8 @@ feature {
   }
 }
 feature {
-  name: "V19"
-  type: FLOAT
+  name: "hour_of_day"
+  type: INT
   presence {
     min_fraction: 1.0
     min_count: 1
@@ -246,8 +287,8 @@ feature {
   }
 }
 feature {
-  name: "V20"
-  type: FLOAT
+  name: "minute_of_hour"
+  type: INT
   presence {
     min_fraction: 1.0
     min_count: 1
@@ -259,8 +300,8 @@ feature {
   }
 }
 feature {
-  name: "V21"
-  type: FLOAT
+  name: "federal_holiday"
+  type: INT
   presence {
     min_fraction: 1.0
     min_count: 1
@@ -272,8 +313,8 @@ feature {
   }
 }
 feature {
-  name: "V22"
-  type: FLOAT
+  name: "customers_onsite_count"
+  type: INT
   presence {
     min_fraction: 1.0
     min_count: 1
@@ -285,99 +326,8 @@ feature {
   }
 }
 feature {
-  name: "V23"
-  type: FLOAT
-  presence {
-    min_fraction: 1.0
-    min_count: 1
-  }
-  shape {
-    dim {
-      size: 1
-    }
-  }
-}
-feature {
-  name: "V24"
-  type: FLOAT
-  presence {
-    min_fraction: 1.0
-    min_count: 1
-  }
-  shape {
-    dim {
-      size: 1
-    }
-  }
-}
-feature {
-  name: "V25"
-  type: FLOAT
-  presence {
-    min_fraction: 1.0
-    min_count: 1
-  }
-  shape {
-    dim {
-      size: 1
-    }
-  }
-}
-feature {
-  name: "V26"
-  type: FLOAT
-  presence {
-    min_fraction: 1.0
-    min_count: 1
-  }
-  shape {
-    dim {
-      size: 1
-    }
-  }
-}
-feature {
-  name: "V27"
-  type: FLOAT
-  presence {
-    min_fraction: 1.0
-    min_count: 1
-  }
-  shape {
-    dim {
-      size: 1
-    }
-  }
-}
-feature {
-  name: "V28"
-  type: FLOAT
-  presence {
-    min_fraction: 1.0
-    min_count: 1
-  }
-  shape {
-    dim {
-      size: 1
-    }
-  }
-}
-feature {
-  name: "Amount"
-  type: FLOAT
-  presence {
-    min_fraction: 1.0
-    min_count: 1
-  }
-  shape {
-    dim {
-      size: 1
-    }
-  }
-}
-feature {
-  name: "Class"
-  type: FLOAT
+  name: "open_orders_count"
+  type: INT
   presence {
     min_fraction: 1.0
     min_count: 1
