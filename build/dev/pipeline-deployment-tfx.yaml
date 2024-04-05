@@ -140,14 +140,14 @@ substitutions:
   _BQ_DATASET_NAME: site1
   _ML_TABLE: events_ml
   _VERTEX_DATASET_NAME: events
-  _MODEL_DISPLAY_NAME: site1-eta-v01
+  _MODEL_DISPLAY_NAME: site1-eta-v02
   _CI_TRAIN_LIMIT: '1000'
   _CI_TEST_LIMIT: '100'
   _CI_UPLOAD_MODEL: '0'
   _CI_ACCURACY_THRESHOLD: '-0.1'
   _BEAM_RUNNER: DataflowRunner
   _TRAINING_RUNNER: vertex
-  _PIPELINE_NAME: eta-v01-train-pipeline
+  _PIPELINE_NAME: eta-v02-train-pipeline
   _PIPELINES_STORE: gs://mlops-helloworld-dev/eta/compiled_pipelines/
   _SUBNETWORK: https://www.googleapis.com/compute/v1/projects/mlops-helloworld/regions/us-central1/subnetworks/subnet-us-central1
   _SERVICE_ACCOUNT: mlops-sa-mlops@mlops-helloworld.iam.gserviceaccount.com

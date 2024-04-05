@@ -78,7 +78,7 @@ substitutions:
   _REGION: us-central1
   _PROJECT: mlops-helloworld
   _GCS_BUCKET: mlops-helloworld_cloudbuild/logs
-  _PIPELINE_NAME: eta-v01-train-pipeline
+  _PIPELINE_NAME: eta-v02-train-pipeline
   _PIPELINE_PARAMS: '{"num_epochs": 7, "learning_rate": 0.001, "batch_size": 200, "steps_per_epoch": 25, "hidden_units": "16,16"}'
   _SERVICE_ACCOUNT: mlops-sa-mlops@mlops-helloworld.iam.gserviceaccount.com
   _PIPELINES_STORE: gs://mlops-helloworld-dev/eta/compiled_pipelines/
