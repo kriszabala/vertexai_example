@@ -261,6 +261,7 @@ def create_pipeline(
     print(f"Labels for model: {labels}")
 
     # Custom implementation.
+    # TODO: add explanation_config
     vertex_model_uploader = custom_components.vertex_model_uploader(
         project=config.PROJECT,
         region=config.REGION,
@@ -268,7 +269,7 @@ def create_pipeline(
         pushed_model_location=exported_model_location,
         serving_image_uri=config.SERVING_IMAGE_URI,
         model_blessing=evaluator.outputs["blessing"],
-        explanation_config=explanation_config #,
+        explanation_config='',
         #labels=labels # currently labels have values too long or too many keys or something else invalid
     ).with_id("VertexUploader")
 
