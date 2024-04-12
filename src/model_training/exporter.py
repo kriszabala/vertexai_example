@@ -56,15 +56,7 @@ def _get_serve_features_fn(classifier, tft_output):
     @tf.function
     def serve_features_fn(raw_features):
         """Returns the output to be used in the serving signature."""
-
-        transformed_features = classifier.tft_layer(raw_features)
-        logits = classifier(transformed_features)
-        neg_probabilities = keras.activations.sigmoid(logits)
-        pos_probabilities = 1 - neg_probabilities
-        probabilities = tf.concat([neg_probabilities, pos_probabilities], -1)
-        batch_size = tf.shape(probabilities)[0]
-        classes = tf.repeat([features.TARGET_LABELS], [batch_size], axis=0)
-        return {"classes": classes, "scores": probabilities}
+        return {"eta": raw_features}
 
     return serve_features_fn
 
